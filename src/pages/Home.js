@@ -3,20 +3,8 @@ import React from "react";
 const Home = () => {
   return (
     <>
-      <div
-        className="container"
-        style={{
-          height: "100vh",
-          textAlign: "center",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-          justifyItems: "center",
-          alignContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div className="col" style={{}}>
+      <div className="flex flex-row justify-evenly justify-items-center content-center items-center text-center h-100">
+        <div className="col">
           <h1>Joevano</h1>
           <h1>8</h1>
           <h2>Tasks Completed This Week</h2>
@@ -42,9 +30,6 @@ const Home = () => {
             <li>TJBL - Express</li>
           </ul>
         </div>
-      </div>
-      <div className="main" style={{ height: "100vh" }}>
-        Test
       </div>
     </>
   );
