@@ -13,7 +13,7 @@ export default function Home({ cards }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(`${process.env.APP_URL}/api/tasks`);
   const cards = await res.json();
 

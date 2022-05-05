@@ -12,7 +12,9 @@ const index = ({ task }) => {
   );
 };
 
-export const getStaticProps = async (context) => {
+export default index;
+
+export const getServerSideProps = async (context) => {
   const res = await fetch(
     `${process.env.APP_URL}/api/tasks/${context.params.id}`
   );
@@ -24,18 +26,3 @@ export const getStaticProps = async (context) => {
     },
   };
 };
-
-export const getStaticPaths = async () => {
-  const res = await fetch(`${process.env.APP_URL}/api/tasks/`);
-  const tasks = await res.json();
-
-  const ids = tasks.map((task) => task._id);
-  const paths = ids.map((id) => ({ params: { id: id.toString() } }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export default index;
