@@ -1,7 +1,6 @@
 import Task from "../../../models/task";
 import mongoose from "mongoose";
 
-// TODO: MAKE THE FUCKING _ID TURN INTO STRING
 export default async function handler({ query: { id } }, res) {
   const task = await Task.find({
     _id: new mongoose.Types.ObjectId(id),
